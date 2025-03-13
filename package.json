@@ -1,0 +1,29 @@
+{
+  "name": "reactcustomssr",
+  "version": "1.0.0",
+  "description": "用express搭建一个react SSR的demo，了解SSR流程",
+  "main": "index.js",
+  "scripts": {
+    "dev:all": "run-p dev:server:start dev:server:build dev:client:build",
+    "dev:server:start": "nodemon --watch dist --exec node ./dist/server/server.js",
+    "dev:server:build": "webpack --config webpack.server.js",
+    "dev:client:build": "webpack --config webpack.client.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.2",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.26.10",
+    "@babel/preset-env": "^7.26.9",
+    "@babel/preset-react": "^7.26.3",
+    "babel-loader": "^10.0.0",
+    "nodemon": "^3.1.9",
+    "webpack": "^5.98.0",
+    "webpack-cli": "^6.0.1",
+    "webpack-node-externals": "^3.0.0"
+  }
+}
