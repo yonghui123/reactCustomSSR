@@ -1,8 +1,10 @@
 import React from "react";
 import { renderToString } from "react-dom/server";
-import APP from "./App"
+import APP from "./App";
+import { getScripts } from "../../plugin/getScripts";
 export const render = (req, res) => {
   let home = renderToString(<APP />);
+  let scripts = getScripts();
   let html = `<!DOCTYPE html>
   <html lang="en">
   <head>
@@ -13,6 +15,7 @@ export const render = (req, res) => {
   </head>
   <body>
     ${home}
+    ${scripts}
   </body>
   </html>
   `;
